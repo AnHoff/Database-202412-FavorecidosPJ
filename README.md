@@ -20,4 +20,4 @@ O arquivo CreateInserts.py atua na geração dos inserts necessários para popul
 
 Para utilizá-lo, coloque os arquivos baixados do [Portal da Transparência](https://portaldatransparencia.gov.br/download-de-dados/favorecidos-pj) e coloque o caminho para cada um deles no script CreateInserts.py. Rode o script. Ao final, será gerado o script popula.sql, na pasta [Scripts](./Scripts/). Execute o arquivo gerado no MySQL Workbench ou similar.
 
-O tamanho do arquivo será de aproximadamente 370mb e pode levar algum tempo para ser gerado. Os dados precisam ser analisados, de forma a retirar tuplas incompletas e outras incoerencias. Isso servirá como prática para consultas e execução de scripts em SQL.
+O arquivo pode levar algum tempo para ser gerado. Os dados são analisados no CreateInserts.py, de forma a retirar tuplas incompletas. Isso servirá como prática para consultas e execução de scripts em SQL.
