@@ -13,8 +13,8 @@ def remove_apostrophes(value):
     return value
 
 # Verificar se há valores 'nan' ou NaN
-def contains_nan(row):
-    return row.isnull().any() or (row == 'nan').any() or (row == '0').any() or (row == 0).any()
+# def contains_nan(row):
+#     return row.isnull().any() or (row == 'nan').any()
 
 sql_inserts = []
 
@@ -47,8 +47,8 @@ for table_name, file_path in file_paths.items():
             row = row.apply(remove_apostrophes)
             
             # Verificar se a linha contém NaN (valores ausentes) ou 'nan'
-            if contains_nan(row):
-                continue  # Pula essa linha se ela contiver NaN ou 'nan'
+            #if contains_nan(row):
+                #continue  # Pula essa linha se ela contiver NaN ou 'nan'
             
             values = "', '".join(map(str, row.values))
             sql = f"INSERT INTO {table_name} VALUES ('{values}');"
