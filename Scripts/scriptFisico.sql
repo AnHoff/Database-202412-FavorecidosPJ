@@ -21,8 +21,8 @@ CREATE TABLE IF NOT EXISTS CNPJ (
     CNPJ bigint NOT NULL,                          
     RAZAOSOCIAL VARCHAR(255) NOT NULL,          
     NOMEFANTASIA VARCHAR(255),                  
-    COD_CNAE INT(9),                           -- Código CNAE
-    COD_NATJURIDICA INT(4),                    -- Código da natureza jurídica
+    COD_CNAE INT(9) NOT NULL,                           -- Código CNAE
+    COD_NATJURIDICA INT(4) NOT NULL,                    -- Código da natureza jurídica
     TIPO_PESSOA VARCHAR(255),                   
     LOGRADOURO VARCHAR(255),                    
     NUMERO VARCHAR(50),                         		-- Número (aceita 'SN' ou outros textos)
