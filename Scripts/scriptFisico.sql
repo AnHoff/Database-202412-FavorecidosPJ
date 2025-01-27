@@ -42,3 +42,19 @@ CREATE TABLE IF NOT EXISTS CNPJ (
         ON UPDATE CASCADE
 );
 
+-- Usuário administrador
+CREATE USER 'admin'@'%' IDENTIFIED BY 'admin';
+GRANT ALL PRIVILEGES ON 202412_favorecidospj.* TO 'admin'@'%';  -- Privilegio excessivo em todos os bancos
+FLUSH PRIVILEGES;
+
+-- Usuário com privilégios excessivos
+CREATE USER 'consultor'@'%' IDENTIFIED BY 'consultor';
+GRANT ALL PRIVILEGES ON 202412_favorecidospj.* TO 'consultor'@'%';
+GRANT GRANT OPTION ON 202412_favorecidospj.* TO 'consultor'@'%';
+FLUSH PRIVILEGES;
+
+-- Usuário com permissões para alterar dados em qualquer banco de dados
+CREATE USER 'advogado'@'%' IDENTIFIED BY 'advogado';
+GRANT INSERT, UPDATE, DELETE ON 202412_favorecidospj.* TO 'advogado'@'%';  -- Privilégios excessivos de alteração de dados
+FLUSH PRIVILEGES;
+
